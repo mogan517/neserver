@@ -9,7 +9,10 @@ app.config["MYSQL_DB"] = 'flaskapp'
 
 mysql = MySQL(app)
 # app = Flask(__name__)
-# app.config['SERVER_NAME'] = "127.0.0.1:5001"
+# app.config['sfs新i4用sfs户注册regitrstionSERVER_NAME'] = "127.0.0.1:5001"
+@app.route('/')
+def home():
+    return render_template('home.html')
 @app.route('/users')
 def users():
     cur = mysql.connection.cursor()
@@ -17,7 +20,7 @@ def users():
     if resultValue > 0:
         userDetails = cur.fetchall()
         return render_template('users.html',userDetails=userDetails)
-@app.route("/",methods=['GET','POST'])
+@app.route("/registration",methods=['GET','POST'])
 def registration():
     if request.method == "POST":
         userDetails  = request.form
