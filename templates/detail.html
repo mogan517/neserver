@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+	<header>
+		<a href="" target="_blank"><img src="../static/images/logo.png" alt="Logo" /></a>
+		
+		<ul class="menu">
+			<li class="active"> <span>Basics</span> 
+				<span class="caret"></span>
+				<ul class="dropdown">
+					<li> <a href="" target="_blank">1baby cards</a> </li>
+					<li>2baby cards</li>
+					<li>3baby cards</li>
+				</ul>
+			</li>
+			<li> <span>Basics</span>
+				<span class="caret"></span>
+				<ul class="dropdown">
+					<li>1baby cards</li>
+					<li>2baby cards</li>
+					<li>3baby cards</li>
+				</ul>
+			</li>
+			<li> <span>Basics</span>
+				<ul class="dropdown">
+					<li>1baby cards</li>
+					<li>2baby cards</li>
+					<li>3baby cards</li>
+				</ul>
+			</li>
+			<li> <span>Basics</span>
+				<ul class="dropdown">
+					<li>1baby cards</li>
+					<li>2baby cards</li>
+					<li>3baby cards</li>
+				</ul>
+			</li>
+		</ul>
+	</header>
+
+	<div class="container">
+		<div class="c-left">
+			<ol class="breadcrumb"><li><a href="">Home</a></li><li>Baby Sign Language Chart</li></ol>
+			<h1>Baby Sign Language Chart</h1>
+<p>
+	<strong>age</strong>: an flash card is useful to teach your baby the sign in preparation for a trip to the beach.</p><p>
+	age: The ocean flash card is useful to teach your baby the sign in preparation for a trip to the beach.</p><p>
+	age:  ocean flash card is useful to teach your baby the sign inflash card is useful to teach your baby the sign inflash card is useful to teach your baby the sign in preparation for a trip to the beach.</p>
+		<p>
+	age: The ocean to teach your baby the sign in preparation for a trip to the beach.</p>	
+		</div>
+		<div class="c-right"></div>
+	</div>
+	<style type="text/css" media="screen">
+		.container,
+		header {
+			width: 80vw;
+			margin:0 auto;
+			flex-direction: row;
+			display: flex;
+		}
+
+		.c-left{
+			flex: 4;
+		}.c-right {
+			flex: 1;
+		}
+		header {
+			border-bottom: 1px solid darkgray;
+		}
+
+		header>a {
+
+			align-self: center;
+			flex: 2;
+		}
+
+
+		header>a:only-child img {
+
+			height: 26.55px;
+			width: 220px;
+		}
+		header>ul {
+			flex: 5
+		}
+
+		.menu {
+			display: inline-flex;
+			color: green;
+		}
+
+		.menu>li {
+			padding: .5rem 1rem;
+			margin-right: 2rem;
+			position: relative;
+		}
+
+		ul,
+		li {
+			list-style: none;
+		}
+
+		.dropdown {
+			display: none;
+			text-align: center;
+			padding: 10px;
+		}
+
+		.dropdown li {
+			border-bottom: 1px solid white;
+			color: white;
+			width: 8rem;
+			margin: 1rem;
+		}
+
+		.dropdown li:hover {
+			background: white;
+			color: green;
+		}
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px solid #000;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+    border-bottom: 0 dotted;
+}
+		.menu .active ,.menu li:hover  {
+			text-decoration: none;
+			color: white;
+			background-color: green;
+		}
+
+		.menu li:hover .dropdown {
+			position: absolute;
+			margin-top: 7px;
+			margin-left: -16px;
+			height: 8rem;
+			background: #ccc;
+			display: block;
+		}
+
+		.menu li:hover .dropdown ul {
+			padding: none;
+			margin: none;
+			height: 9rem;
+			display: block;
+		}
+		.breadcrumb {
+	padding: 8px 15px;
+    margin-bottom: 27px;
+    list-style: none;
+    background-color: #f5f5f5;
+    border-radius: 4px	}
+	.breadcrumb>li+li:before {
+    content: "/\00a0";
+    padding: 0 5px;
+    color: #ccc;
+	}
+	.breadcrumb a {
+    color: #9abe00;
+}
+	.breadcrumb  li {
+		display: inline-block;
+		color:#ccc
+	}
+	h1{
+	font-size: 41px;
+	}
+	</style>
+	<script>
+
+	</script>
+</body>
+
+</html>
