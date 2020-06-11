@@ -2,8 +2,9 @@ from flask import Flask, render_template, request, redirect
 from flask_mysqldb import MySQL
 app = Flask(__name__, template_folder='templates')
 
-app.config["MYSQL_HOST"] = 'localhost'
-app.config["MYSQL_USER"] = 'root'
+app.config["MYSQL_HOST"] = '47.101.59.109'
+app.config["MYSQL_PORT"] = 3306
+app.config["MYSQL_USER"] = 'mogan'
 app.config["MYSQL_PASSWORD"] = 'nease.net'
 app.config["MYSQL_DB"] = 'flaskapp'
 
@@ -14,13 +15,18 @@ mysql = MySQL(app)
 def home():
     return render_template('home.html')
 
-@app.route('/nice/<int:that>')
-def nice(that=1):
+@app.route('/nice/<int:lid>')
+def nice(lid):
     cur = mysql.connection.cursor()
-    resultValue1 = cur.execute('SELECT * FROM Articles WHERE ArticleId = {0}'.format(that))
+    resultValue1 = cur.execute('SELECT * FROM Articles WHERE ArticleId = {0}'.format(lid))
     ddd = cur.fetchall()
-    return  render_template('detail.html',ddd=ddd,that=that)
-    # return 'Subpath %s' % escape(that)
+    return render_template('detail.html', ddd=ddd, lid=lid)
+@app.route('/nicelist')
+def listp():
+    cur = mysql.connection.cursor()
+    resultValue1 = cur.execute('SELECT * FROM Articles')
+    ddd = cur.fetchall()
+    return  render_template('detail.html',ddd=ddd)
 @app.route('/users')
 def users():
     cur = mysql.connection.cursor()
@@ -50,4 +56,4 @@ def registration():
 
 if __name__ == '__main__':
     from waitress import serve
-    serve(app,host='0.0.0.0',port=5000)
+    serve(app, host='0.0.0.0', port=80)

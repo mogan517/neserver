@@ -2,9 +2,8 @@
 {{ super() }}
 <link rel="stylesheet" href="{{ 
   url_for('static', filename="css/detail.css")
-
-
 }}" /> {% endblock %} {% block content %}
+
 <div class="menu-wrap">
 	<div class="logo">logo</div>
 	<input type="checkbox" class="toggler" />
@@ -66,34 +65,21 @@
 </header>
 
 <div class="container">
-	<div class="c-left">
+	{% for u in ddd %}
+	<div id="leftcontent" class="c-left">
 		<ol class="breadcrumb">
 			<li><a href="">首页</a></li>
-			<li>Baby Sign Language Chart</li>
+			<li>
+				{% block title %}
+					
+				{% endblock %}
+			</li>
 		</ol>
-	{% if lid %}
-	{% for u in ddd %}
-		<h1>{{ u[1] }}</h1>
-		<p>
-			{{ u[2] }}
-		</p>
-	{% endfor %}
-	{% else %}
-		<ul>
-		{% for li in ddd %}
-			<li class="list-box">
-				<h3 class="texth1">
-					{{li[1]}}
-				</h3>
-				<p>
-					{{li[2]}}
-				</p>
-			</li> 	
-		{% endfor %}
-		</ul>
-	{% endif %}
+	     <div id="leftcontent">
+						
+		 </div>
 	</div>
-	<div class="c-right"></div>
-	
+	<div id="rightcontent" class="c-right"></div>
+	{% endfor %}
 </div>
 {% endblock %}

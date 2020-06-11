@@ -1,4 +1,16 @@
 
+		 .c-left ul {
+			 margin: 0rem;
+			 padding-left:0;
+		 }
+		 li.list-box {
+			padding:1rem;
+			border:1px solid green;
+			margin-bottom: 1rem;
+		 }
+		 .texth1{
+			 color: #666;
+		 }
 			.container,
 			header {
 				width: 80vw;
