@@ -13,6 +13,14 @@ mysql = MySQL(app)
 @app.route('/')
 def home():
     return render_template('home.html')
+
+@app.route('/nice/<int:that>')
+def nice(that=1):
+    cur = mysql.connection.cursor()
+    resultValue1 = cur.execute('SELECT * FROM Articles WHERE ArticleId = {0}'.format(that))
+    ddd = cur.fetchall()
+    return  render_template('detail.html',ddd=ddd,that=that)
+    # return 'Subpath %s' % escape(that)
 @app.route('/users')
 def users():
     cur = mysql.connection.cursor()
