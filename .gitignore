@@ -1,2 +1,5 @@
 *fuck_env/*
 fuck_env
+*.zip*
+*get-pip*
+*.pyc*

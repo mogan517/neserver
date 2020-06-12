@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from flask_mysqldb import MySQL
 app = Flask(__name__, template_folder='templates')
-
+import sys
 app.config["MYSQL_HOST"] = '47.101.59.109'
 app.config["MYSQL_PORT"] = 3306
 app.config["MYSQL_USER"] = 'mogan'
@@ -10,7 +10,6 @@ app.config["MYSQL_DB"] = 'flaskapp'
 
 mysql = MySQL(app)
 # app = Flask(__name__)
-# app.config['sfs新i4用sfs户注册regitrstionSERVER_NAME'] = "127.0.0.1:5001"
 @app.route('/')
 def home():
     return render_template('home.html')
