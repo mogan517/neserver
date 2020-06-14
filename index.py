@@ -14,18 +14,18 @@ mysql = MySQL(app)
 def home():
     return render_template('home.html')
 
-@app.route('/nice/<int:lid>')
-def nice(lid):
+@app.route('/article/<int:aid>')
+def article(aid):
     cur = mysql.connection.cursor()
-    resultValue1 = cur.execute('SELECT * FROM Articles WHERE ArticleId = {0}'.format(lid))
-    ddd = cur.fetchall()
-    return render_template('detail.html', ddd=ddd, lid=lid)
-@app.route('/nicelist')
-def listp():
+    resultValue1 = cur.execute('SELECT * FROM Articles WHERE ArticleId = {0}'.format(aid))
+    article = cur.fetchall()
+    return render_template('article.html', article=article, aid=aid)
+@app.route('/articlelist')
+def articlelist():
     cur = mysql.connection.cursor()
     resultValue1 = cur.execute('SELECT * FROM Articles')
-    ddd = cur.fetchall()
-    return  render_template('detail.html',ddd=ddd)
+    allarticle = cur.fetchall()
+    return render_template('article.html', allarticle=allarticle)
 @app.route('/users')
 def users():
     cur = mysql.connection.cursor()
@@ -33,6 +33,24 @@ def users():
     if resultValue > 0:
         userDetails = cur.fetchall()
         return render_template('users.html',userDetails=userDetails)
+@app.route("/postarticle", methods=['GET', 'POST'])
+def postarticle():
+    if request.method == "POST":
+        userPost = request.form
+        title = userPost['Title']
+        photo = userPost['Photo']
+        ss = userPost['Snapshot']
+        content = userPost['Content']
+        cur = mysql.connection.cursor()
+        insert_stmt = (
+          "INSERT INTO Articles (Photo,Title,Content,Snapshot) "
+          "VALUES (%s,%s,%s,%s)"
+        )
+        cur.execute(insert_stmt, [photo, title, content, ss])
+        mysql.connection.commit()
+        cur.close()
+    return render_template('postarticle.html')
+
 @app.route("/registration",methods=['GET','POST'])
 def registration():
     if request.method == "POST":
@@ -49,7 +67,7 @@ def registration():
         mysql.connection.commit()
         cur.close()
         return redirect('/users')
-    return  render_template('ok.html')
+    return render_template('regist.html')
 
 
 

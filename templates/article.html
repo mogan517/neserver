@@ -15,7 +15,7 @@
 				<ul>
 					<li><a href="#">首页</a></li>
 					<li><a href="#">关于本站</a></li>
-					<li><a href="#">Top 10 </a></li>
+					<li><a href="#">Top 10 most wished Books</a></li>
 					<li><a href="#">加入</a></li>
 				</ul>
 			</div>
@@ -33,12 +33,12 @@
 			<span class="caret"></span>
 			<ul class="dropdown">
 				<li><a href="" target="_blank">亲子互动</a></li>
-				<li>2baby cards</li>
+				<li>故事书</li>
 				<li>3baby cards</li>
 			</ul>
 		</li>
 		<li>
-			<span>困扰</span>
+			<span>童话</span>
 			<span class="caret"></span>
 			<ul class="dropdown">
 				<li>求助方式</li>
@@ -72,21 +72,20 @@
 			<li>Baby Sign Language Chart</li>
 		</ol>
 	{% if lid %}
-	{% for u in ddd %}
+	{% for u in article %}
 		<h1>{{ u[1] }}</h1>
-		<p>
-			{{ u[2] }}
-		</p>
+		1{{ u[2] |safe }}
 	{% endfor %}
 	{% else %}
 		<ul>
-		{% for li in ddd %}
+		{% for li in allarticle %}
 			<li class="list-box">
 				<h3 class="texth1">
 					{{li[1]}}
 				</h3>
 				<p>
-					{{li[2]}}
+					{{li[2]|safe}}
+					{{li[3]|safe}}
 				</p>
 			</li> 	
 		{% endfor %}
