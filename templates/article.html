@@ -1,7 +1,7 @@
 {% extends "layout.html" %} {% block head %}
 {{ super() }}
 <link rel="stylesheet" href="{{ 
-  url_for('static', filename="css/detail.css")
+  url_for('static', filename="css/article.css")
 
 
 }}" /> {% endblock %} {% block content %}
@@ -71,10 +71,10 @@
 			<li><a href="">首页</a></li>
 			<li>Baby Sign Language Chart</li>
 		</ol>
-	{% if lid %}
+	{% if aid %}
 	{% for u in article %}
 		<h1>{{ u[1] }}</h1>
-		1{{ u[2] |safe }}
+		{{ u[2] }}
 	{% endfor %}
 	{% else %}
 		<ul>
@@ -83,10 +83,7 @@
 				<h3 class="texth1">
 					{{li[1]}}
 				</h3>
-				<p>
-					{{li[2]|safe}}
-					{{li[3]|safe}}
-				</p>
+					{{li[4]|safe}}
 			</li> 	
 		{% endfor %}
 		</ul>

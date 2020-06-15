@@ -4,12 +4,14 @@
 			 padding-left:0;
 		 }
 		 li.list-box {
-			padding:1rem;
-			border:1px solid green;
+			padding:2rem;
+			background: #f2f7f7;
 			margin-bottom: 1rem;
 		 }
-		 .texth1{
+		 .texth1 ~ p{
+			 text-indent:2rem;
 			 color: #666;
+			 font-size: 1rem;
 		 }
 			.container,
 			header {

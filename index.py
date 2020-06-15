@@ -7,7 +7,11 @@ app.config["MYSQL_PORT"] = 3306
 app.config["MYSQL_USER"] = 'mogan'
 app.config["MYSQL_PASSWORD"] = 'nease.net'
 app.config["MYSQL_DB"] = 'flaskapp'
-
+def convertToBinaryData(filename):
+    # Convert digital data to binary format
+    with open(filename, 'rb') as file:
+        binaryData = file.read()
+    return binaryData
 mysql = MySQL(app)
 # app = Flask(__name__)
 @app.route('/')
@@ -19,6 +23,7 @@ def article(aid):
     cur = mysql.connection.cursor()
     resultValue1 = cur.execute('SELECT * FROM Articles WHERE ArticleId = {0}'.format(aid))
     article = cur.fetchall()
+    print(article)
     return render_template('article.html', article=article, aid=aid)
 @app.route('/articlelist')
 def articlelist():
@@ -39,6 +44,7 @@ def postarticle():
         userPost = request.form
         title = userPost['Title']
         photo = userPost['Photo']
+        img = convertToBinaryData(photo)
         ss = userPost['Snapshot']
         content = userPost['Content']
         cur = mysql.connection.cursor()
@@ -46,7 +52,7 @@ def postarticle():
           "INSERT INTO Articles (Photo,Title,Content,Snapshot) "
           "VALUES (%s,%s,%s,%s)"
         )
-        cur.execute(insert_stmt, [photo, title, content, ss])
+        cur.execute(insert_stmt, [img, title, content, ss])
         mysql.connection.commit()
         cur.close()
     return render_template('postarticle.html')
