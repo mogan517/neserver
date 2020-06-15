@@ -11,9 +11,24 @@
 	<body>
 		<div style="height:90%" id="content">{% block content %}{% endblock %}</div>
 		<div id="footer">
+			<ul>
+				<li><a href="{{url_for('home')}}">关于</a></li>
+				<li><a href="{{url_for('home')}}">adv</a></li>
+				<li><a href="{{url_for('home')}}">contact</a></li>
+				<li><a href="{{url_for('home')}}">registery</a></li>
+			</ul>
 			{% block footer %} &copy; Copyright 2010 by
-			<a href="http://domain.invalid/">you</a>. {% endblock %}
+			<a href="http://domain.invalid/">you and me
+	<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278985685'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278985685%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>	</a>. {% endblock %}
 		</div>
-		<script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1278985685'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1278985685%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+		
+		<style type="text/css" media="screen">
+#footer {
+	text-align:center
+}
+#footer ul li {
+ display:inline-block;
+}
+		</style>
 	</body>
 </html>
