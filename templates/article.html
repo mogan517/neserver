@@ -78,16 +78,20 @@
 	{% endfor %}
 	{% else %}
 		<ul>
-		{% for li in allarticle %}
+		{% for li in allarticle  %}
 			<li class="list-box">
 				<h3 class="texth1">
 					{{li[1]}}
 				</h3>
+				<p class="snaps">
 					{{li[4]|safe}}
+					<a href=""class="detallink">【详情】</a>
+				</p>
 			</li> 	
 		{% endfor %}
 		</ul>
 	{% endif %}
+				<p><button class="more">查看更多</button></p>
 	</div>
 	<div class="c-right"></div>
 	
