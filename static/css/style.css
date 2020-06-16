@@ -3,7 +3,7 @@
 body {
   font-family: 'Raleway', sans-serif;
   height: 100vh;
-  background: #333 url('https://image.ibb.co/n5A2HU/showcase.jpg') no-repeat center center / cover;
+  background: #333 url('../images/Single-Black-Mom.jpg') no-repeat center center / cover;
   color: #ccc;
   overflow:hidden;
 }
@@ -23,6 +23,8 @@ h1, h2 {
 
 h1 {
   font-size: 3.5rem;
+  color:red;
+  background-color:rgba(222,112,222,0.3);
 }
 
 h2 {
