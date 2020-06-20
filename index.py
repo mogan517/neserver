@@ -16,7 +16,8 @@ mysql = MySQL(app)
 # app = Flask(__name__)
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('fruit.html')
+    # return render_template('home.html')
 
 @app.route('/article/<int:aid>')
 def article(aid):

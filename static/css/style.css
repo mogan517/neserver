@@ -2,10 +2,10 @@
 
 body {
   font-family: 'Raleway', sans-serif;
-  height: 100vh;
-  background: #333 url('../images/Single-Black-Mom.jpg') no-repeat center center / cover;
+  /* height: 100vh; */
+  /* background: #333 url('../images/Single-Black-Mom.jpg') no-repeat center center / cover; */
   color: #ccc;
-  overflow:hidden;
+  /* overflow:hidden; */
 }
 
 .container {
@@ -47,7 +47,11 @@ h2 {
   .container {
     padding: 0 1rem;
   }
-
+.responsive {
+	 width: 100%;
+  max-width: 400px;
+  height: auto;
+}
   h1 {
     font-size: 3rem;
   }
@@ -57,8 +61,13 @@ h2 {
   h1 {
     font-size: 2.5rem;
   }
-
+.responsive {
+	 width: 100%;
+  max-width: 400px;
+  height: auto;
+}
   h2 {
     font-size: 1.5rem;
   }
 }
+
