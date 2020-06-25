@@ -74,7 +74,7 @@
 	{% if aid %}
 	{% for u in article %}
 		<h1>{{ u[1] }}</h1>
-		{{ u[2] }}
+        {{ u[2]|safe }}
 	{% endfor %}
 	{% else %}
 		<ul>
@@ -85,7 +85,7 @@
 				</h3>
 				<p class="snaps">
 					{{li[4]|safe}}
-					<a href=""class="detallink">【详情】</a>
+					<a href="{{url_for('article',aid=li[0])}}"class="detallink">【详情】</a>
 				</p>
 			</li> 	
 		{% endfor %}

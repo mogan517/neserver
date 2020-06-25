@@ -14,8 +14,12 @@ def convertToBinaryData(filename):
     return binaryData
 mysql = MySQL(app)
 # app = Flask(__name__)
-@app.route('/')
+@app.route('/home')
 def home():
+    # return render_template('fruit.html')
+    return render_template('home.html')
+@app.route('/')
+def fruit():
     return render_template('fruit.html')
     # return render_template('home.html')
 
@@ -24,7 +28,6 @@ def article(aid):
     cur = mysql.connection.cursor()
     resultValue1 = cur.execute('SELECT * FROM Articles WHERE ArticleId = {0}'.format(aid))
     article = cur.fetchall()
-    print(article)
     return render_template('article.html', article=article, aid=aid)
 @app.route('/articlelist')
 def articlelist():
