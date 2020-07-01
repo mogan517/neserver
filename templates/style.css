@@ -1,3 +1,31 @@
+
+		 .c-left ul {
+			 margin: 0rem;
+			 padding-left:0;
+		 }
+		 li.list-box {
+			padding:2rem;
+			background: #f2f7f7;
+			margin-bottom: 1rem;
+		 }
+		 .texth1 {
+			 font-size: 1.5rem;
+			 color:blue;
+			 margin:0;
+		 }
+		 a.detallink {
+			 text-decoration: none;
+			 color:red
+		 }
+		 .texth1 ~ p.snaps{
+			 margin:0;
+			 text-indent:2rem;
+			 color: #666;
+			 font-size: 1.4rem;
+		 }
+		 .c-left > p {
+			 text-align: center
+		 }
 *{
 	padding:0;
 	margin:0 ;
